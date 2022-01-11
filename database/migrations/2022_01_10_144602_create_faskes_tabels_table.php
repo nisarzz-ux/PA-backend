@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableDemografiSurabaya extends Migration
+class CreateFaskesTabelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateTableDemografiSurabaya extends Migration
      */
     public function up()
     {
-        Schema::create('table_demografi_surabayas', function (Blueprint $table) {
-            $table->bigIncrements('id_wilayah');
-            $table -> string('kecamatan');
-            $table-> string('bagian_wilayah');
-            $table->integer('penduduk_laki');
-            $table->integer('penduduk_wanita');
+        Schema::create('faskes_tabels', function (Blueprint $table) {
+            $table->bigIncrements('id_faskes');
+            $table->string('kecamatan');
+            $table->string('bagian_wilayah');
+            $table->string('jenis_faskes');
+            $table->string('alamat');
+            $table->string('status');
             $table->float('latKoordinat');
             $table->float('longKoordinat');
             $table->timestamps();
@@ -32,6 +33,6 @@ class CreateTableDemografiSurabaya extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_demografi_surabayas');
+        Schema::dropIfExists('faskes_tabels');
     }
 }
