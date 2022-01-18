@@ -8,7 +8,7 @@ use Carbon\Carbon;
 class NovemberTabel extends Model
 {
     protected $table ='november_tabels';
-    protected $fillable = ['kecamatan','bagian_wilayah','positif','sembuh','mati','rawat'];
+    protected $fillable = ['kecamatan','bagian_wilayah','positif','sembuh','mati','rawat','Tanggal'];
     protected $primaryKey = 'id_tableNov';
     // protected $hidden =['id_tableSep'];
 

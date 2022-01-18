@@ -23,8 +23,7 @@ class faskesController extends Controller
     //insert Data Faskes 
     public function insert_faskes(Request $request){
         $data = new FaskesTabel;
-        
-        $data -> kecamatan = $request -> kecamatan;
+        $data -> nama_faskes = $request -> nama_faskes;
         $data -> bagian_wilayah = $request -> bagian_wilayah;
         $data -> jenis_faskes =$request -> jenis_faskes;
         $data -> alamat = $request -> alamat;
@@ -45,7 +44,7 @@ class faskesController extends Controller
     public function update_data(Request $request, $id){
         
         $data = FaskesTabel::firstWhere('id_faskes',$id);
-        $data -> kecamatan = $request -> kecamatan;
+        $data -> nama_faskes = $request -> nama_faskes;
         $data -> bagian_wilayah = $request -> bagian_wilayah;
         $data -> jenis_faskes =$request -> jenis_faskes;
         $data -> alamat = $request -> alamat;
