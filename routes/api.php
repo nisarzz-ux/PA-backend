@@ -22,7 +22,7 @@ Route::get('barang','apicontroller@get_all_barang');
 
 //Demografi Get Data
 Route::get('demografi','demograficontroller@get_all_demografi');
-Route::get('demografi_show/{id}','demograficontroller@edit');
+Route::get('demografiSelect/{id}','demograficontroller@edit');
 
 //September Get Data 
 Route::get('septemberTabel','SeptemberController@get_all_data');

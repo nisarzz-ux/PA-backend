@@ -10,19 +10,18 @@ class SeptemberController extends Controller
 {
     public function get_all_data()
     {
-        return response() ->json(SeptemberTabel::all(),200);
+        return response()->json(SeptemberTabel::with('demografi')->get(),200);
     }
 
   
     public function insert_september(Request $request)
     {   
         $insert_table = new SeptemberTabel;
-        $insert_table -> kecamatan = $request -> kecamatan;
-        $insert_table -> bagian_wilayah = $request -> bagian_wilayah;
-        $insert_table -> positif = $request -> positif;
-        $insert_table -> sembuh = $request -> sembuh;
-        $insert_table -> mati = $request -> mati;
-        $insert_table -> rawat = $request -> rawat;
+        $insert_table -> demografi_id = $request->demografi_id;
+        $insert_table -> positif = $request->positif;
+        $insert_table -> sembuh = $request->sembuh;
+        $insert_table -> mati = $request->mati;
+        $insert_table -> rawat = $request->rawat;
         $tanggal = Carbon::parse($request->Tanggal);
         $insert_table -> Tanggal = $tanggal ;
         $insert_table -> save();

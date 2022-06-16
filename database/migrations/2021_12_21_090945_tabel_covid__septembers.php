@@ -15,8 +15,7 @@ class TabelCovidSeptembers extends Migration
     {
         Schema::create('table_covid_septembers', function (Blueprint $table) {
             $table->bigIncrements('id_tableSep');
-            $table ->string('kecamatan');
-            $table->string('bagian_wilayah');
+            $table->integer('demografi_id');
             $table->integer('positif');
             $table->integer('sembuh');
             $table->integer('mati');

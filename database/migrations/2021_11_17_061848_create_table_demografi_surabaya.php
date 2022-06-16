@@ -15,8 +15,8 @@ class CreateTableDemografiSurabaya extends Migration
     {
         Schema::create('table_demografi_surabayas', function (Blueprint $table) {
             $table->bigIncrements('id_wilayah');
-            $table -> string('kecamatan');
-            $table-> string('bagian_wilayah');
+            $table ->string('kecamatan');
+            $table->string('bagian_wilayah');
             $table->integer('penduduk_laki');
             $table->integer('penduduk_wanita');
             $table->float('latKoordinat');
