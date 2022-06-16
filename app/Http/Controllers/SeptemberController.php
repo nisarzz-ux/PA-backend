@@ -10,7 +10,14 @@ class SeptemberController extends Controller
 {
     public function get_all_data()
     {
-        return response()->json(SeptemberTabel::with('demografi')->get(),200);
+        $data = SeptemberTabel::with('demografi')->get();
+        return response()->json($data,200);
+    }
+
+    public function get_data_byDate(Request $request){
+        $date = $request->tanggal;
+        $data = SeptemberTabel::with('demografi')->where('Tanggal','=',$date)->get();
+        return response()->json($data,200);
     }
 
   

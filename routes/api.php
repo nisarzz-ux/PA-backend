@@ -26,6 +26,7 @@ Route::get('demografiSelect/{id}','demograficontroller@edit');
 
 //September Get Data 
 Route::get('septemberTabel','SeptemberController@get_all_data');
+Route::get('septemberDate','SeptemberController@get_data_byDate');
 Route::get('september_show/{id}','SeptemberController@show');
 
 //Oktober Get Data 
