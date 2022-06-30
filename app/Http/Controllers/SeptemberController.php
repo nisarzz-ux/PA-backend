@@ -20,6 +20,16 @@ class SeptemberController extends Controller
         return response()->json($data,200);
     }
 
+    // public function dataGet(Request $request){
+    //     $date = $request->tanggal;
+    //     $wil = $request->wilayah;
+    //     $data = SeptemberTabel::with('demografi')->where([
+    //         ['Tanggal','=',$date],
+    //         [('demografi.bagian_wilayah'),'=',$wil],
+    //     ])->get();
+    //     return response()->json($data,200);
+    // }
+
     public function get_data_rangeDate(Request $request){
         $date = $request->tanggal;
         $date2 = $request->tanggal2;
