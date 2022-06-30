@@ -10,7 +10,7 @@ class demograficontroller extends Controller
 {
     // read data 
     public function get_all_demografi(){
-        return response()->json(DemografiModel::with('september')->get(),200);
+        return response()->json(DemografiModel::all(),200);
     }
 
     public Function edit($id){

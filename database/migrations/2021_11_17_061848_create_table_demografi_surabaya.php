@@ -19,8 +19,8 @@ class CreateTableDemografiSurabaya extends Migration
             $table->string('bagian_wilayah');
             $table->integer('penduduk_laki');
             $table->integer('penduduk_wanita');
-            $table->float('latKoordinat');
-            $table->float('longKoordinat');
+            $table->double('latKoordinat');
+            $table->double('longKoordinat');
             $table->timestamps();
         });
     }

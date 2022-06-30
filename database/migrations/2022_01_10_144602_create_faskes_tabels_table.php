@@ -15,8 +15,8 @@ class CreateFaskesTabelsTable extends Migration
     {
         Schema::create('faskes_tabels', function (Blueprint $table) {
             $table->bigIncrements('id_faskes');
+            $table->integer('demografi_id');
             $table->string('nama_faskes');
-            $table->string('bagian_wilayah');
             $table->string('jenis_faskes');
             $table->string('alamat');
             $table->string('status');

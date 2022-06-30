@@ -14,6 +14,11 @@ class DemografiModel extends Model
         return $this->hasMany('App\SeptemberTabel','demografi_id','id_wilayah');
     }
 
+    public function faskesData(){
+        return $this->hasMany('App\FaskesTabel','demografi_id','id_wilayah');
+
+    }
+
     
     
 

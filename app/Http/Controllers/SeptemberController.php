@@ -20,6 +20,13 @@ class SeptemberController extends Controller
         return response()->json($data,200);
     }
 
+    public function get_data_rangeDate(Request $request){
+        $date = $request->tanggal;
+        $date2 = $request->tanggal2;
+        $data = SeptemberTabel::with('demografi')->whereBetween('Tanggal',[$date,$date2])->get();
+        return response()->json($data,200);
+    }
+
   
     public function insert_september(Request $request)
     {   
@@ -51,19 +58,18 @@ class SeptemberController extends Controller
     public function update_data(Request $request, $id)
     {
         $data = SeptemberTabel::firstWhere('id_tableSep',$id);
-        $data -> kecamatan = $request -> kecamatan;
-        $data -> bagian_wilayah = $request -> bagian_wilayah;
-        $data -> positif = $request -> positif;
-        $data -> sembuh = $request -> sembuh;
-        $data -> mati = $request -> mati;
+        $data-> demografi_id = $request->demografi_id;
+        $data-> positif = $request -> positif;
+        $data-> sembuh = $request -> sembuh;
+        $data-> mati = $request -> mati;
         $data-> rawat = $request -> rawat;
         $tanggal = Carbon::parse($request->Tanggal);
-        $data -> Tanggal = $tanggal ;
-        $data -> save();
-        $data -> Tanggal = $tanggal->format("d-m-Y") ;
+        $data-> Tanggal = $tanggal ;
+        $data-> save();
+        $data-> Tanggal = $tanggal->format("d-m-Y") ;
         return response([
             'status' => 'OK',
-            'message' => 'Data berhasil Disimpan',
+            'message' => 'Data berhasil DiUpdate',
             'data' => $data
         ],200);
     }
