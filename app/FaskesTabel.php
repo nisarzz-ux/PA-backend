@@ -11,7 +11,7 @@ class FaskesTabel extends Model
     protected $primaryKey = 'id_faskes';
     
     public function demografi(){
-        return $this->belongsTo('App\FaskesTabel','demografi_id','id_faskes');
+        return $this->belongsTo('App\DemografiModel','demografi_id','id_wilayah');
     }
     
 }
